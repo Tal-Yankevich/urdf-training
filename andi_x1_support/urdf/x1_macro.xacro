@@ -1,0 +1,58 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+<xacro:macro name="andi_x1" params="prefix">
+
+<!-- ANDI Project EEF URDF -->
+
+    <link name="${prefix}eef_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://andi_x1_support/meshes/andi_x1_visual.stl"/>
+            </geometry>
+            <material name="eef">
+                <color rgba="0.5 0.8 0.5 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://andi_x1_support/meshes/andi_x1_collision.stl"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <link name="${prefix}eef_vertical_slider">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://andi_x1_support/meshes/verticaltestingmount_visual.stl"/>
+            </geometry>
+            <material name="eef">
+                <color rgba="0.5 0.8 0.5 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://andi_x1_support/meshes/verticaltestingmount_collision.stl"/>
+            </geometry>
+        </collision>
+    </link>
+    <!-- EEF TCP Defined as the center point between EEF finger tips -->
+    <joint name="${prefix}eef_link-eef_vertical_slider" type="fixed">
+        <origin xyz="0.04 0.03 -0.09" rpy="0 0 0"/>
+        <parent link="${prefix}eef_link"/>
+        <child link="${prefix}eef_vertical_slider"/> 
+    </joint>
+
+    <joint name="${prefix}eef_vertical_slider-eef_tcp" type="fixed">
+        <origin xyz="0.00725 0.027 0.1223" rpy="0 0 0"/>
+        <parent link="${prefix}eef_vertical_slider"/>
+        <child link="${prefix}eef_tcp"/> 
+    </joint>
+
+    <link name="${prefix}eef_tcp"/>
+
+</xacro:macro>
+</robot>

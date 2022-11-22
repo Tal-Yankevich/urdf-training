@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>andi_x1_support</name>
+  <version>0.1.0</version>
+  <description>
+    <p>ROS-Industrial Support Package for the ANDI project</p>
+    <p>
+      <b>Configuration:</b>
+    </p>
+    <ul>
+      <li>MH5 - Compatible with Long and Short Variant</li>
+      <li>Schunk UZB 64 (300042)</li>
+      <li>Custom Gripper Fingers - Unserrated Model</li>
+    </ul>
+  </description>
+  <author>Tal-Yankevich</author>
+  <maintainer email="yankevich.4@osu.edu">acbuynak</maintainer>
+  <license>Apache 2.0</license>
+
+  <url type="bugtracker">https://github.com/osu-aims/aims-robots-all/issues</url>
+  <url type="repository">https://github.com/osu-aims/aims-robots-all</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <test_depend>roslaunch</test_depend>
+
+  <exec_depend>joint_state_publisher</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>rviz</exec_depend>
+  <exec_depend>xacro</exec_depend>
+
+  <export>
+    <architecture_independent/>
+  </export>
+</package>

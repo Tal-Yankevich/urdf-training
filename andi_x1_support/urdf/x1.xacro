@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+
+<robot name="eef_andi_x1" xmlns:xacro="http://ros.org/wiki/xacro">
+    <xacro:include filename="$(find andi_x1_support)/urdf/x1_macro.xacro" />
+    <xacro:andi_x1 prefix=""/>
+
+</robot>
